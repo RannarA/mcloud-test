@@ -1,0 +1,20 @@
+<md-grid-list cols="4">
+  <md-grid-tile [colspan]="1" *ngFor="let product of products">
+    <md-card class="example-card">
+      <md-card-header>
+        <div md-card-avatar class="example-header-image"></div>
+        <md-card-title>{{ product.name }}</md-card-title>
+        <md-card-subtitle>{{ product.display_price }}</md-card-subtitle>
+      </md-card-header>
+      <img md-card-image src="{{ product.images[0] }}">
+      <md-card-content>
+        <p>
+          {{ product.description }}
+        </p>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button>Add to cart</button>
+      </md-card-actions>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>
