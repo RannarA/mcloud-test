@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CartService} from "../services/cart.service";
 
 @Component({
   selector: 'app-mcloud-test',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mcloud-test.component.sass']
 })
 export class McloudTestComponent implements OnInit {
+  cartItemsCount: number;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
+    this.cartService.cartSize.subscribe(value => {
+      this.cartItemsCount = value;
+    });
   }
 
 }

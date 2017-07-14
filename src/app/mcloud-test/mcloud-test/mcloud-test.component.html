@@ -3,7 +3,11 @@
 
   <md-toolbar color="primary">
     <span>Mcloud test</span>
+
+    <span class="example-spacer"></span>
+    <span>{{ cartItemsCount }}</span>
+    <a routerLink="/checkout" routerLinkActive="active">Checkout</a>
   </md-toolbar>
 
-  <app-products></app-products>
+  <router-outlet></router-outlet>
 </md-sidenav-container>
